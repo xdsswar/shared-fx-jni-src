@@ -1,0 +1,65 @@
+plugins {
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+group 'xss.it.fx'
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+
+
+javafx {
+    version = '17.0.6'
+    modules = ['javafx.controls', 'javafx.fxml','javafx.graphics']
+}
+
+
+
+dependencies {
+
+}
+
+jar{
+    archiveBaseName ='fx-jni'
+    manifest {
+        attributes(
+                'name' : 'fx-jni',
+                'version': version,
+                'description': 'JavaFx Jni lib',
+                'author': 'Xtreme Software Solutions (XSS&IT)'
+        )
+    }
+}
+repositories {
+    mavenCentral()
+}
+
+
+
+def jniHeaderOutputDir = file("$buildDir/headers")
+
+
+
+tasks.register('generateHeaders') {
+    dependsOn headers, copyHeaders
+}
+
+tasks.register('headers', JavaCompile) {
+    source = sourceSets.main.java
+    classpath = sourceSets.main.runtimeClasspath
+    destinationDir = jniHeaderOutputDir
+    source('com/sun/fx/jni/**/*.java')
+    options.compilerArgs = [
+            "-h", jniHeaderOutputDir
+    ] as List<String>
+}
+
+tasks.register('copyHeaders', Copy) {
+    from jniHeaderOutputDir
+    into "$projectDir/fx-jni/src/native/src/jni_headers"
+    include '**/*.h'
+    exclude '**/*'
+}
+

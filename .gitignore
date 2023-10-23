@@ -1,0 +1,12 @@
+# Project exclude paths
+/.gradle/
+/build/
+/demo/build/
+/demo/build/classes/java/main/
+/fx-jni/build/
+/fx-jni/build/classes/java/main/
+/.idea/
+/fx-jni/src/native/.idea/
+/fx-jni/src/native/cmake-build-debug-visual-studio/
+/gradle/
+/fx-jni/src/native/cmake-build-release-visual-studio/

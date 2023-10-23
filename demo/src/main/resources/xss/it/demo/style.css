@@ -1,0 +1,34 @@
+.base{
+    -fx-background-color: #3d3d3d;
+}
+
+.title{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13;
+}
+
+.action-button{
+    -fx-min-width: 50;
+    -fx-max-width: 50;
+    -fx-min-height: 27;
+    -fx-max-height: 27;
+    -fx-background-insets: 0;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.action-button-hover{
+    -fx-background-color: rgba(134, 134, 134, 0.1);
+}
+
+
+
+.action-button-close-hover{
+    -fx-background-color: #C42B1C;
+}
+
+.action-button-shape{
+    -fx-fill: #F9F9F9;
+}
