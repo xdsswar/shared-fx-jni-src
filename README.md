@@ -1,3 +1,6 @@
+### Not maintained anymore.
+* Use [Nfx-Core](https://github.com/xdsswar/nfx-lib) instead. 
+
 ## fx-jni
 ***
 This is a demo application showcasing the usage of the "fx-jni" library,
